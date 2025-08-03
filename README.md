@@ -1,75 +1,76 @@
-# react-map-tutorial
-Sourcecode for my tutorial series on medium "Web Mapping with React.js". This contains a simple Tab Component react application which will be used as the template which to build out each Map Component in each turorial part. 
+# 🗺️ Modern Map in Next.js with Mapbox
+Lightweight, interactive and customizable map built with Next.js App Router, styled with Tailwind CSS, and powered by Mapbox GL JS. UI components via shadcn/ui.
 
-Special thank you to Chinedu Imoh for his work on his How to build a tab component in React article which served as the foundation for this tutorial.
+https://github.com/user-attachments/assets/9caa968c-bfe1-44bf-a1dc-b375070a3e93
 
-At the time of creation my Node and NPM versions were:
-- Node: 14.20.0
-- Package Manager: npm 6.14.17
+![Mobile view](https://github.com/user-attachments/assets/dc99d4e4-d39d-4eeb-990e-d5c5afb6f2b1)
 
-## Available Scripts
 
-In the project directory, you can run:
+## ⚡ Stack
+- Next.js (App Router)
 
-### `npm start`
+- Tailwind CSS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- shadcn/ui
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Mapbox GL JS
 
-### `npm test`
+- Mapbox Searchbox API
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Geist font (via next/font)
+  
 
-### `npm run build`
+## 🔍 Features
+- 📍 Mapbox GL interactive map
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 🔎 Mapbox Searchbox API
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 🎨 Clean UI with shadcn/ui
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- ⚡ Responsive & fast
 
-### `npm run eject`
+- 📱 Mobile-friendly layout
+  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🚀 Getting Started
+First, install dependencies and start the development server:
+```sh
+git clone https://github.com/AnmolSaini16/next-maps.git
+cd your-repo
+npm install
+npm run dev
+```
+### 🔐 Environment Variables
+```sh
+NEXT_PUBLIC_MAPBOX_TOKEN=your_mapbox_access_token
+NEXT_PUBLIC_MAPBOX_SESSION_TOKEN=your_uuidv4_session_token
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📦 Deployment
+Deploy on [Vercel](https://vercel.com) in seconds.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📚 Docs
+- [Next.js Docs](https://nextjs.org/docs)
 
-## Learn More
+- [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/guides)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [Tailwind CSS](https://tailwindcss.com/docs)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [shadcn/ui Docs](https://ui.shadcn.com/docs)
 
-### Code Splitting
+## 🤝 Contributing
+Contributions are welcome!
+If you’d like to improve this project, feel free to fork it and open a pull request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## ☕ Support Me
+If you find this project useful, consider supporting me:
 
-### Analyzing the Bundle Size
+[Sponsor on github](https://github.com/sponsors/AnmolSaini16)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<a href="https://www.buymeacoffee.com/sainianmol0" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
