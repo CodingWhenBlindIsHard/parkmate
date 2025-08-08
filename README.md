@@ -58,19 +58,3 @@ Deploy on [Vercel](https://vercel.com) in seconds.
 - [Tailwind CSS](https://tailwindcss.com/docs)
 
 - [shadcn/ui Docs](https://ui.shadcn.com/docs)
-
-## 🤝 Contributing
-Contributions are welcome!
-If you’d like to improve this project, feel free to fork it and open a pull request.
-
-## ☕ Support Me
-If you find this project useful, consider supporting me:
-
-[Sponsor on github](https://github.com/sponsors/AnmolSaini16)
-
-<a href="https://www.buymeacoffee.com/sainianmol0" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-
-
-
-
-
