@@ -6,6 +6,7 @@ import MapProvider from "@/lib/mapbox/provider";
 import MapStyles from "@/components/map/map-styles";
 import MapCotrols from "@/components/map/map-controls";
 import MapSearch from "@/components/map/map-search";
+import ParkingSignsLayer from "../components/ParkingSignsLayer";
 
 export default function Home() {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
@@ -29,6 +30,9 @@ export default function Home() {
         <MapSearch />
         <MapCotrols />
         <MapStyles />
+
+        {/* 🚫 Parking signs layer */}
+        <ParkingSignsLayer />
       </MapProvider>
     </div>
   );
