@@ -1,14 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useMap, Marker, Popup } from "react-map-gl";
+import { useEffect } from "react";
+import mapboxgl from "mapbox-gl";
+import { useMapContext } from "@/lib/mapbox/context"; // assuming your provider exposes this
 
 export default function ParkingSignsLayer() {
-  const { current: map } = useMap(); // Access the current map instance
-  const [signs, setSigns] = useState([]);
-  const [selected, setSelected] = useState(null);
+  const { map } = useMapContext(); // get actual mapbox-gl Map instance
 
   useEffect(() => {
+    if (!map) return;
+
     const fetchSigns = async () => {
       try {
         const resourceId = "7f1d4ae9-1a12-46d7-953e-6b9c18c78680";
@@ -18,22 +19,27 @@ export default function ParkingSignsLayer() {
         const json = await res.json();
 
         if (json.success && json.result.records) {
-          const data = json.result.records
+          json.result.records
             .filter(r => r.point_geo && r.point_geo.includes(","))
-            .map(r => {
-              const [lat, lon] = r.point_geo
-                .split(",")
-                .map(v => parseFloat(v.trim()));
-              return {
-                id: r._id,
-                lat,
-                lon,
-                restriction: r.sous_type || r.type || "Restriction inconnue",
-                details: r.description || "",
-              };
-            });
+            .forEach(r => {
+              const [lat, lon] = r.point_geo.split(",").map(v => parseFloat(v.trim()));
+              
+              // Create marker
+              const el = document.createElement("div");
+              el.innerHTML = "🚫";
+              el.style.fontSize = "20px";
+              el.style.cursor = "pointer";
 
-          setSigns(data);
+              const marker = new mapboxgl.Marker(el)
+                .setLngLat([lon, lat])
+                .setPopup(
+                  new mapboxgl.Popup({ offset: 25 }).setHTML(`
+                    <h4>${r.sous_type || r.type || "Restriction inconnue"}</h4>
+                    <p>${r.description || ""}</p>
+                  `)
+                )
+                .addTo(map);
+            });
         }
       } catch (err) {
         console.error("Error fetching signs:", err);
@@ -41,40 +47,6 @@ export default function ParkingSignsLayer() {
     };
 
     fetchSigns();
-  }, []);
+  }, [map]);
 
-  if (!map) return null; // No map yet
-
-  return (
-    <>
-      {signs.map(sign => (
-        <Marker
-          key={sign.id}
-          longitude={sign.lon}
-          latitude={sign.lat}
-          anchor="bottom"
-          onClick={e => {
-            e.originalEvent.stopPropagation();
-            setSelected(sign);
-          }}
-        >
-          <div style={{ fontSize: "20px", cursor: "pointer" }}>🚫</div>
-        </Marker>
-      ))}
-
-      {selected && (
-        <Popup
-          longitude={selected.lon}
-          latitude={selected.lat}
-          onClose={() => setSelected(null)}
-          anchor="top"
-        >
-          <div>
-            <h4>{selected.restriction}</h4>
-            <p>{selected.details}</p>
-          </div>
-        </Popup>
-      )}
-    </>
-  );
-}
+  return null; // no JSX needed, we’re drawing directly on the
