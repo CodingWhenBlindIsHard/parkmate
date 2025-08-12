@@ -49,4 +49,5 @@ export default function ParkingSignsLayer() {
     fetchSigns();
   }, [map]);
 
-  return null; // no JSX needed, we’re drawing directly on the
+  return null; // no JSX needed, we’re drawing directly on the map
+}
